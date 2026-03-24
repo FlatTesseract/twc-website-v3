@@ -13,7 +13,7 @@ export function Reel() {
           className="mb-12"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            64 seconds. Everything we do.
+            60 seconds. Everything we do.
           </h2>
           <p className="text-muted-foreground text-lg">
             Brands. Films. Systems. Mess.

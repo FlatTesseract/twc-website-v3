@@ -20,9 +20,11 @@ export function Navbar() {
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <span className="font-display text-xl font-bold tracking-tight">
-            TWC
-          </span>
+          <img 
+            src="/twc-logo.jpg" 
+            alt="The Wider Collective" 
+            className="h-8 w-auto"
+          />
         </Link>
 
         {/* Nav Links */}

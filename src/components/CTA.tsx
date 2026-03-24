@@ -38,7 +38,7 @@ export function CTA() {
           viewport={{ once: true }}
           className="font-display text-5xl md:text-7xl font-bold mb-8"
         >
-          Let's talk strategy.
+          Let's talk.
         </motion.h2>
 
         <motion.p
@@ -48,9 +48,7 @@ export function CTA() {
           transition={{ delay: 0.1 }}
           className="text-xl text-muted-foreground mb-12 max-w-xl mx-auto"
         >
-          30 minutes. No pitch deck. Just a real conversation
-          <br />
-          about what's working, what's not, and what we'd do.
+          30 minutes. No pitch deck. Just strategy.
         </motion.p>
 
         <motion.div

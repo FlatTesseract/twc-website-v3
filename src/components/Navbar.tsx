@@ -19,11 +19,11 @@ export function Navbar() {
     >
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <img 
-            src="/twc-logo.jpg" 
-            alt="The Wider Collective" 
-            className="h-8 w-auto"
+        <Link href="/" className="flex items-center">
+          <img
+            src="/twc-logo-transparent-cropped.png"
+            alt="The Wider Collective"
+            className="h-3 md:h-4 w-auto mix-blend-difference [filter:drop-shadow(0_1px_2px_rgba(0,0,0,0.75))]"
           />
         </Link>
 

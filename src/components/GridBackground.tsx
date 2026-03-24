@@ -1,11 +1,37 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { motion } from "framer-motion";
+
+function seeded(i: number, salt: number) {
+  const x = Math.sin(i * 127.1 + salt * 311.7) * 43758.5453123;
+  return x - Math.floor(x);
+}
 
 export function GridBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
+
+  const dots = useMemo(() => {
+    return Array.from({ length: 20 }, (_, i) => {
+      const x0 = seeded(i, 1) * 100;
+      const y0 = seeded(i, 2) * 100;
+      const x1 = seeded(i, 3) * 100;
+      const y1 = seeded(i, 4) * 100;
+      const x2 = seeded(i, 5) * 100;
+      const y2 = seeded(i, 6) * 100;
+      const duration = 10 + seeded(i, 7) * 20;
+
+      return {
+        id: i,
+        initialX: `${x0}%`,
+        initialY: `${y0}%`,
+        animateX: [`${x1}%`, `${x2}%`],
+        animateY: [`${y1}%`, `${y2}%`],
+        duration,
+      };
+    });
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -57,21 +83,21 @@ export function GridBackground() {
 
       {/* Animated floating dots */}
       <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
+        {dots.map((dot) => (
           <motion.div
-            key={i}
+            key={dot.id}
             className="absolute w-1 h-1 rounded-full bg-accent/30"
             initial={{
-              x: `${Math.random() * 100}%`,
-              y: `${Math.random() * 100}%`,
+              x: dot.initialX,
+              y: dot.initialY,
             }}
             animate={{
-              x: [`${Math.random() * 100}%`, `${Math.random() * 100}%`],
-              y: [`${Math.random() * 100}%`, `${Math.random() * 100}%`],
+              x: dot.animateX,
+              y: dot.animateY,
               opacity: [0.2, 0.5, 0.2],
             }}
             transition={{
-              duration: 10 + Math.random() * 20,
+              duration: dot.duration,
               repeat: Infinity,
               ease: "linear",
             }}

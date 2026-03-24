@@ -15,7 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "The Wider Collective | Film. Brand. Systems.",
   description:
-    "Film. Brand. Systems. For businesses that hate blending in. We build the creative and tech that makes people pay attention.",
+    "Film. Brand. Systems. We design for one thing: measurable growth. We build the creative and tech that makes people pay attention.",
   keywords: [
     "creative agency",
     "brand design",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "The Wider Collective",
-    description: "Film. Brand. Systems. For businesses that hate blending in.",
+    description: "Film. Brand. Systems. We design for one thing: measurable growth.",
     url: "https://thewidercollective.com",
     siteName: "The Wider Collective",
     type: "website",

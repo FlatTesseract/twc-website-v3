@@ -99,7 +99,7 @@ export function Pitch() {
             Death Corp Piggies.
             <br />
             <span className="text-muted-foreground">
-              An apocalyptic pig IP on the Sui blockchain.
+              An apocalyptic pig IP built for web3 culture.
             </span>
           </motion.h2>
 

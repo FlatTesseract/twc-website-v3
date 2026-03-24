@@ -2,14 +2,34 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import FaultyTerminal from "./FaultyTerminal";
 
 export function CTA() {
   return (
     <section id="contact" className="py-32 px-6 relative overflow-hidden">
-      {/* Background gradient */}
+      {/* ReactBits FaultyTerminal background */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-accent/10 via-transparent to-accent-dark/10 blur-3xl" />
+        <FaultyTerminal
+          scale={1.5}
+          gridMul={[2, 1]}
+          digitSize={1.2}
+          timeScale={0.5}
+          pause={false}
+          scanlineIntensity={0.5}
+          glitchAmount={1}
+          flickerAmount={1}
+          noiseAmp={1}
+          chromaticAberration={0}
+          dither={0}
+          curvature={0.1}
+          tint="#8f6090"
+          mouseReact
+          mouseStrength={1}
+          pageLoadAnimation
+          brightness={0.6}
+        />
       </div>
+      <div className="absolute inset-0 bg-black/35 pointer-events-none" />
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.h2

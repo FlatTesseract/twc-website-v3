@@ -49,7 +49,7 @@ export function Hero() {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-xl mx-auto"
         >
-          For businesses that hate blending in.
+          We design for one thing: measurable growth.
         </motion.p>
 
         {/* CTA Button */}

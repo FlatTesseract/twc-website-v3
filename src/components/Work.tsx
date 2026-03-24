@@ -15,7 +15,7 @@ const projects = [
     title: "Mana Bay",
     description: "Brand and campaign creative delivery.",
     subtitle: "Hospitality story brought to life.",
-    image: "/logos/mana-bay.png",
+    image: "/logos/mana-bay-solid-black.png",
     href: "/case-study/manabay",
   },
   {

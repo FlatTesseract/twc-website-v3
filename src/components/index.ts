@@ -1,0 +1,10 @@
+export { Navbar } from "./Navbar";
+export { Hero } from "./Hero";
+export { Work } from "./Work";
+export { Services } from "./Services";
+export { Pitch } from "./Pitch";
+export { Clients } from "./Clients";
+export { Opinions } from "./Opinions";
+export { Reel } from "./Reel";
+export { CTA } from "./CTA";
+export { Footer } from "./Footer";

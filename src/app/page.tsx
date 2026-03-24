@@ -5,7 +5,6 @@ import {
   Services,
   Pitch,
   Clients,
-  Opinions,
   Reel,
   CTA,
   Footer,
@@ -21,7 +20,6 @@ export default function Home() {
         <Services />
         <Pitch />
         <Clients />
-        <Opinions />
         <Reel />
         <CTA />
       </main>

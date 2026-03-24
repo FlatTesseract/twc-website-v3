@@ -38,7 +38,7 @@ export function CTA() {
           viewport={{ once: true }}
           className="font-display text-5xl md:text-7xl font-bold mb-8"
         >
-          Got something?
+          Let's talk strategy.
         </motion.h2>
 
         <motion.p
@@ -48,9 +48,9 @@ export function CTA() {
           transition={{ delay: 0.1 }}
           className="text-xl text-muted-foreground mb-12 max-w-xl mx-auto"
         >
-          We run 4-5 projects at a time.
+          30 minutes. No pitch deck. Just a real conversation
           <br />
-          If yours is interesting, we want to hear about it.
+          about what's working, what's not, and what we'd do.
         </motion.p>
 
         <motion.div
@@ -64,7 +64,7 @@ export function CTA() {
             target="_blank"
             className="inline-flex items-center gap-2 px-12 py-5 text-xl font-bold bg-accent text-background rounded-full hover:scale-105 transition-transform glow"
           >
-            Book a call
+            Book a free strategy call
           </Link>
         </motion.div>
 

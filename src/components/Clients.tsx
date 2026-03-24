@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 // Row 4: Este Medical Group, GenderGP
 const clients = [
   { name: "AirAsia", logo: "/logos/air-asia.png" },
-  { name: "Mana Bay", logo: "/logos/mana-bay.png" },
+  { name: "Mana Bay", logo: "/logos/mana-bay-black.png" },
   { name: "Yoyoso", logo: "/logos/yoyoso.png" },
   { name: "Maldivian", logo: "/logos/Maldivian.png" },
   { name: "Sayeman Beach Resort", logo: "/logos/sayeman.png" },
@@ -48,12 +48,12 @@ function LogoMarquee({
         {duplicatedItems.map((client, i) => (
           <div
             key={`${client.name}-${i}`}
-            className="flex-shrink-0 px-10 py-5 border border-border/50 rounded-lg hover:border-accent/50 transition-colors group flex items-center justify-center min-w-[220px] h-[120px]"
+            className="flex-shrink-0 px-12 py-6 border border-border/50 rounded-lg hover:border-accent/50 transition-colors group flex items-center justify-center min-w-[360px] h-[200px]"
           >
             <img 
               src={client.logo} 
               alt={`${client.name} logo`}
-              className="max-h-20 max-w-[200px] object-contain opacity-70 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0"
+              className="max-h-40 max-w-[320px] object-contain opacity-75 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0"
             />
           </div>
         ))}

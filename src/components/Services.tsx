@@ -39,7 +39,7 @@ export function Services() {
           className="mb-20 text-center"
         >
           <h2 className="font-display text-4xl md:text-6xl font-bold">
-            Three things. Properly.
+            Focused services. Measurable outcomes
           </h2>
         </motion.div>
 
@@ -83,15 +83,7 @@ export function Services() {
           ))}
         </div>
 
-        {/* Footer */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center text-muted-foreground text-lg mt-24"
-        >
-          We don't do 50 things. We do three. Better than most.
-        </motion.p>
+
       </div>
     </section>
   );

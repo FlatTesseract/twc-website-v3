@@ -56,6 +56,32 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  .faulty-terminal-bg {
+    background:
+      radial-gradient(circle at 25% 20%, rgba(143, 96, 144, 0.18), transparent 42%),
+      radial-gradient(circle at 75% 70%, rgba(123, 108, 217, 0.16), transparent 45%),
+      linear-gradient(180deg, rgba(8, 8, 10, 0.9), rgba(5, 5, 7, 0.98));
+  }
+
+  .faulty-terminal-scanlines {
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 2px,
+      transparent 4px
+    );
+    mix-blend-mode: soft-light;
+    animation: terminal-scroll 12s linear infinite;
+  }
+
+  .faulty-terminal-noise {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 0.8px, transparent 0.8px);
+    background-size: 3px 3px;
+    opacity: 0.15;
+    animation: terminal-flicker 260ms steps(2, end) infinite;
+  }
 }
 
 /* Custom cursor styles */
@@ -102,20 +128,6 @@ html.lenis {
   pointer-events: none;
 }
 
-/* Scroll snap container */
-.snap-container {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
-  scroll-behavior: smooth;
-}
-
-.snap-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  min-height: 100vh;
-}
-
 /* Scroll snap with resistance feel */
 @supports (scroll-snap-type: y mandatory) {
   html {
@@ -124,6 +136,16 @@ html.lenis {
   
   section[data-snap="true"] {
     scroll-snap-align: start;
-    scroll-margin-top: 80px; /* Account for navbar */
+    scroll-margin-top: 80px;
   }
+}
+
+@keyframes terminal-flicker {
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 0.2; }
+}
+
+@keyframes terminal-scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(24px); }
 }

@@ -9,3 +9,5 @@ export { Reel } from "./Reel";
 export { CTA } from "./CTA";
 export { Footer } from "./Footer";
 export { GridBackground } from "./GridBackground";
+export { SmoothScroll } from "./SmoothScroll";
+export { Section } from "./Section";

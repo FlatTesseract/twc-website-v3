@@ -2,25 +2,25 @@
 
 import { motion } from "framer-motion";
 
-// Client logos - placeholder names, will add actual images
+// Client logos from thewidercollective.com
 const clients = [
-  "AirAsia",
-  "Maldivian",
-  "Global Mission",
-  "GenderGP",
-  "Death Corp",
-  "Camel",
-  "Yoyoso",
-  "Sayeman",
-  "Mana Bay",
-  "Renai",
+  { name: "AirAsia", logo: "https://video.thewidercollective.com/logos/air%20asia.png" },
+  { name: "Maldivian", logo: "https://video.thewidercollective.com/logos/Maldivian.png" },
+  { name: "Global Mission", logo: "https://video.thewidercollective.com/logos/global%20mission%20institute.png" },
+  { name: "GenderGP", logo: "https://video.thewidercollective.com/logos/gendergp.png" },
+  { name: "Death Corp", logo: "https://video.thewidercollective.com/logos/death%20corp%20piggies.png" },
+  { name: "Camel", logo: "https://video.thewidercollective.com/logos/camel.png" },
+  { name: "Yoyoso", logo: "https://video.thewidercollective.com/logos/yoyoso.png" },
+  { name: "Sayeman", logo: "https://video.thewidercollective.com/logos/sayeman.png" },
+  { name: "Mana Bay", logo: "https://video.thewidercollective.com/logos/mana%20bay.png" },
+  { name: "Renai", logo: "https://video.thewidercollective.com/logos/renai.png" },
 ];
 
 function LogoMarquee({
   items,
   direction = "left",
 }: {
-  items: string[];
+  items: typeof clients;
   direction?: "left" | "right";
 }) {
   const duplicatedItems = [...items, ...items];
@@ -43,12 +43,14 @@ function LogoMarquee({
       >
         {duplicatedItems.map((client, i) => (
           <div
-            key={`${client}-${i}`}
-            className="flex-shrink-0 px-8 py-4 border border-border/50 rounded-lg hover:border-accent/50 transition-colors group"
+            key={`${client.name}-${i}`}
+            className="flex-shrink-0 px-8 py-4 border border-border/50 rounded-lg hover:border-accent/50 transition-colors group flex items-center justify-center min-w-[140px] h-[80px]"
           >
-            <span className="text-muted-foreground group-hover:text-foreground transition-colors font-medium whitespace-nowrap">
-              {client}
-            </span>
+            <img 
+              src={client.logo} 
+              alt={`${client.name} logo`}
+              className="max-h-10 max-w-[100px] object-contain opacity-60 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0"
+            />
           </div>
         ))}
       </motion.div>

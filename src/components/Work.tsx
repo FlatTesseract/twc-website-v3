@@ -8,28 +8,28 @@ const projects = [
     title: "AirAsia",
     description: "1.1M reached. $0.06 per lead.",
     subtitle: "Pan-Asian market launch.",
-    image: "/work/airasia.jpg", // Placeholder - will add real image
+    image: "https://thewidercollective.com/assets/airasia-cover-A6P9r8aC.png",
     href: "/case-study/airasia",
   },
   {
     title: "Death Corp Piggies",
     description: "3,333 NFTs. $500K generated.",
     subtitle: "From napkin to universe.",
-    image: "/work/deathcorp.jpg",
+    image: "https://thewidercollective.com/assets/deathcorp-cover-BgPkz-vz.png",
     href: "/case-study/deathcorp",
   },
   {
     title: "Global Mission",
     description: "Full rebrand.",
     subtitle: "NGO that finally looks like 2026.",
-    image: "/work/globalmission.jpg",
+    image: "https://thewidercollective.com/assets/gmi-cover-BRC-3QQX.png",
     href: "/case-study/globalmission",
   },
   {
     title: "Yoyoso",
     description: "2.5M reach. +40% footfall.",
     subtitle: "80+ pastel creatives.",
-    image: "/work/yoyoso.jpg",
+    image: "https://thewidercollective.com/assets/yoyoso-cover-aHCgoYuI.png",
     href: "/case-study/yoyoso",
   },
 ];
@@ -62,13 +62,12 @@ export function Work() {
             >
               <Link href={project.href} className="group block">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-muted mb-4">
-                  {/* Placeholder - replace with real images */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent-dark/20" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-display text-2xl font-bold opacity-30">
-                      {project.title}
-                    </span>
-                  </div>
+                  {/* Project image */}
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
 
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-500" />

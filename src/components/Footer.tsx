@@ -8,6 +8,10 @@ const socials = [
   { name: "X", href: "https://x.com/widercollective" },
 ];
 
+const footerLinks = [
+  { name: "Press", href: "/press" },
+];
+
 export function Footer() {
   return (
     <footer className="py-12 px-6 border-t border-border">
@@ -17,6 +21,16 @@ export function Footer() {
         </p>
 
         <div className="flex gap-6">
+          {footerLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+            >
+              {link.name}
+            </Link>
+          ))}
+          <span className="text-muted-foreground/30">·</span>
           {socials.map((social) => (
             <Link
               key={social.name}

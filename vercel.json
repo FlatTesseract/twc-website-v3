@@ -15,6 +15,8 @@
     { "source": "/inactive", "destination": "https://the-wider-collective-os.vercel.app/inactive" },
     { "source": "/inactive/", "destination": "https://the-wider-collective-os.vercel.app/inactive" },
     { "source": "/onboarding-required", "destination": "https://the-wider-collective-os.vercel.app/onboarding-required" },
-    { "source": "/onboarding-required/", "destination": "https://the-wider-collective-os.vercel.app/onboarding-required" }
+    { "source": "/onboarding-required/", "destination": "https://the-wider-collective-os.vercel.app/onboarding-required" },
+    { "source": "/auth/callback", "destination": "https://the-wider-collective-os.vercel.app/auth/callback" },
+    { "source": "/auth/callback/", "destination": "https://the-wider-collective-os.vercel.app/auth/callback" }
   ]
 }

@@ -7,8 +7,12 @@
     { "source": "/portal/", "destination": "https://the-wider-collective-os.vercel.app/portal" },
     { "source": "/portal/:path*", "destination": "https://the-wider-collective-os.vercel.app/portal/:path*" },
     { "source": "/login", "destination": "https://the-wider-collective-os.vercel.app/login" },
+    { "source": "/login/", "destination": "https://the-wider-collective-os.vercel.app/login" },
     { "source": "/logout", "destination": "https://the-wider-collective-os.vercel.app/logout" },
+    { "source": "/logout/", "destination": "https://the-wider-collective-os.vercel.app/logout" },
     { "source": "/inactive", "destination": "https://the-wider-collective-os.vercel.app/inactive" },
-    { "source": "/onboarding-required", "destination": "https://the-wider-collective-os.vercel.app/onboarding-required" }
+    { "source": "/inactive/", "destination": "https://the-wider-collective-os.vercel.app/inactive" },
+    { "source": "/onboarding-required", "destination": "https://the-wider-collective-os.vercel.app/onboarding-required" },
+    { "source": "/onboarding-required/", "destination": "https://the-wider-collective-os.vercel.app/onboarding-required" }
   ]
 }

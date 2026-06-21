@@ -273,10 +273,20 @@ export function CaseStudyContent({
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <HeroMediaBlock
-                media={study.heroMedia}
-                alt={`${study.client} hero`}
-              />
+              {slug === "smarted" ? (
+                <div className="relative aspect-video rounded-2xl overflow-hidden border border-border bg-black">
+                  <img
+                    src="/smarted/applications/keyvisual.jpg"
+                    alt="Smart Ed brand keyvisual"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ) : (
+                <HeroMediaBlock
+                  media={study.heroMedia}
+                  alt={`${study.client} hero`}
+                />
+              )}
             </motion.div>
           </div>
         </section>

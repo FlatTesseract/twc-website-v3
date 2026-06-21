@@ -173,6 +173,208 @@ export const caseStudies: Record<string, CaseStudy> = {
     ],
   },
 
+  mev: {
+    slug: "mev",
+    client: "MEV — Mango Electric Vehicles",
+    industry: "Automotive / Brand",
+    title: "Building Bangladesh's first homegrown EV brand — built to export.",
+    summary:
+      "A full brand system for Bangladesh's first homegrown electric-vehicle marque — name, identity, model architecture, and a launch platform engineered to scale from Dhaka roads to export markets.",
+    heroMedia: {
+      kind: "video",
+      src: `/mev/hero-surge-z.mp4`,
+      poster: `/mev/hero-poster.jpg`,
+    },
+    kpis: [
+      { label: "Vehicle lineup", value: "6 models" },
+      { label: "Sub-brands", value: "4 families" },
+      { label: "Flagship range", value: "402 km" },
+      { label: "Built for", value: "Export" },
+    ],
+    snapshot: {
+      industry: "Automotive / Brand",
+      region: "Bangladesh → Export",
+      services: [
+        "Brand strategy",
+        "Naming & architecture",
+        "Visual identity",
+        "Product naming",
+        "Web & launch platform",
+        "Campaign direction",
+      ],
+      timeline: "12 weeks",
+      team: "6 people",
+    },
+    challenge: [
+      "Bangladesh had never had a homegrown passenger-vehicle brand — and \"made in Bangladesh\" carried a perception problem: capable of garments and assembly, but not premium, export-grade machines.",
+      "Mango Teleservices wanted to enter mobility from zero. The job wasn't a campaign — it was an entire marque: a name, a face, a model architecture, and a launch presence credible enough to stand beside global EV brands while staying unmistakably Bangladeshi.",
+    ],
+    strategy: [
+      {
+        heading: "A name with roots",
+        text: "Mango — the national fruit — became the origin story. MEV (Mango Electric Vehicles) wears its Bangladeshi heritage with pride while staying short, globally pronounceable, and export-ready on any badge.",
+      },
+      {
+        heading: "A model architecture that scales",
+        text: "One naming system spanning the whole range: SURGE for passenger (Z electric, H hybrid), ATLAS and DELTA for heavy-duty, CURRENT for commercial. From a premium SUV to a 20-tonne dump truck, the lineup reads as one family.",
+      },
+      {
+        heading: "Premium, not provincial",
+        text: "A confident design language — Volt black and Mango orange, Glacial Indifference display type, and a monospace spec voice — built to look export-grade against any global marque, not like a local first attempt.",
+      },
+    ],
+    execution: [
+      {
+        heading: "Identity & logo system",
+        text: "An interlocking 'M' monogram and wordmark, a disciplined color hierarchy, and a typographic system that holds up from a phone screen to a showroom wall.",
+      },
+      {
+        heading: "Model naming & sub-brand architecture",
+        text: "SURGE Z, SURGE H, ATLAS, DELTA, CURRENT 4.5T and CURRENT 8T BEV — a structured nomenclature that lets MEV add vehicles for years without the range fragmenting.",
+      },
+      {
+        heading: "Launch & reservation platform",
+        text: "A cinematic single-page launch site — hero film, animated spec storytelling, full technical sheet, and a reservation funnel that turns interest into named leads before a single unit ships.",
+      },
+      {
+        heading: "Product & campaign direction",
+        text: "Art direction for vehicle photography, the interior showcase, and the spec-led narrative — a visual toolkit that carries from the flagship SURGE Z down to the commercial fleet.",
+      },
+    ],
+    gallery: [
+      {
+        heading: "The flagship — SURGE Z",
+        layout: "grid-2",
+        items: [
+          {
+            kind: "image",
+            src: `/mev/surge-z-featured.jpg`,
+            title: "SURGE Z · Premium Electric SUV",
+            aspect: "16/9",
+          },
+          {
+            kind: "image",
+            src: `/mev/surge-z-profile.jpg`,
+            title: "Pure side profile",
+            aspect: "16/9",
+          },
+          {
+            kind: "image",
+            src: `/mev/surge-z-aerial.jpg`,
+            title: "Cabin from above",
+            aspect: "16/9",
+          },
+          {
+            kind: "image",
+            src: `/mev/surge-z-hero.jpg`,
+            title: "402 km CLTC range",
+            aspect: "16/9",
+          },
+        ],
+      },
+      {
+        heading: "Inside the cabin",
+        layout: "grid-3",
+        items: [
+          {
+            kind: "image",
+            src: `/mev/int-comfort.jpg`,
+            title: "Comfort",
+            aspect: "4/5",
+          },
+          {
+            kind: "image",
+            src: `/mev/int-sunroof.jpg`,
+            title: "Panoramic sunroof",
+            aspect: "4/5",
+          },
+          {
+            kind: "image",
+            src: `/mev/int-tech.jpg`,
+            title: "Connected controls",
+            aspect: "4/5",
+          },
+        ],
+      },
+      {
+        heading: "The full range",
+        layout: "grid-3",
+        items: [
+          { kind: "image", src: `/mev/surge-h.jpg`, title: "SURGE H · Hybrid", aspect: "4/5" },
+          { kind: "image", src: `/mev/atlas.jpg`, title: "ATLAS · Heavy-duty cargo", aspect: "4/5" },
+          { kind: "image", src: `/mev/delta.jpg`, title: "DELTA · 20-tonne dump truck", aspect: "4/5" },
+          { kind: "image", src: `/mev/current-45t.jpg`, title: "CURRENT 4.5T · Light-duty", aspect: "4/5" },
+          { kind: "image", src: `/mev/current-8t.jpg`, title: "CURRENT 8T · All-electric truck", aspect: "4/5" },
+          { kind: "image", src: `/mev/surge-z-hero.jpg`, title: "SURGE Z · Flagship", aspect: "4/5" },
+        ],
+      },
+      {
+        heading: "The brand in use",
+        layout: "grid-2",
+        items: [
+          {
+            kind: "image",
+            src: `/mev/applications/billboard.jpg`,
+            title: "Out-of-home · SURGE Z",
+            aspect: "16/9",
+          },
+          {
+            kind: "image",
+            src: `/mev/applications/vehicle-wrap.jpg`,
+            title: "Fleet & vehicle livery",
+            aspect: "16/9",
+          },
+          {
+            kind: "image",
+            src: `/mev/applications/digital.jpg`,
+            title: "Digital & web",
+            aspect: "16/9",
+          },
+          {
+            kind: "image",
+            src: `/mev/applications/apparel.jpg`,
+            title: "Team apparel",
+            aspect: "16/9",
+          },
+          {
+            kind: "image",
+            src: `/mev/applications/stationery.jpg`,
+            title: "Stationery system",
+            aspect: "16/9",
+          },
+          {
+            kind: "image",
+            src: `/mev/applications/merch.jpg`,
+            title: "Merchandise",
+            aspect: "16/9",
+          },
+        ],
+      },
+    ],
+    results: {
+      metrics: [
+        { label: "Brand", value: "Launched" },
+        { label: "Lineup", value: "6 models" },
+        { label: "Sub-brands", value: "4 families" },
+        { label: "Flagship range", value: "402 km" },
+        { label: "Positioning", value: "Export-ready" },
+      ],
+      narrative:
+        "MEV launched as Bangladesh's first homegrown EV marque — a complete brand and product family, from a premium electric SUV to a full commercial fleet, with an identity engineered to travel beyond home borders.",
+    },
+    testimonial: {
+      quote:
+        "TWC didn't just design a logo — they built us a brand the country could be proud of, and one that holds its own against global names. They gave Bangladeshi engineering a face worth exporting.",
+      author: "Brand Lead",
+      role: "MEV — Mango Electric Vehicles",
+    },
+    nextSteps: [
+      "Localized brand and badge variants for priority export markets.",
+      "Dealer and showroom retail-experience design system.",
+      "Owner-app and connected-vehicle brand extension.",
+    ],
+  },
+
   manabay: {
     slug: "manabay",
     client: "Mana Bay",
@@ -304,6 +506,150 @@ export const caseStudies: Record<string, CaseStudy> = {
     ],
   },
 
+  smarted: {
+    slug: "smarted",
+    client: "Smart Ed",
+    industry: "Education / Brand",
+    title: "A premium brand for Bangladesh's next young leaders.",
+    summary:
+      "A complete brand system for Smart Ed — naming architecture, a playful mascot family, visual identity, and messaging — positioning it as the trusted parent brand bringing globally proven learning programmes, starting with I Can Read, to Bangladesh.",
+    heroMedia: { kind: "image", src: `/smarted/applications/keyvisual.jpg` },
+    kpis: [
+      { label: "Positioning", value: "Premium platform" },
+      { label: "Flagship programme", value: "I Can Read" },
+      { label: "Mascot family", value: "4 characters" },
+      { label: "Identity", value: "Full system" },
+    ],
+    snapshot: {
+      industry: "Education / Brand",
+      region: "Bangladesh",
+      services: [
+        "Brand strategy",
+        "Naming & architecture",
+        "Visual identity",
+        "Mascot design",
+        "Messaging system",
+        "Brand guidelines",
+      ],
+      timeline: "5 weeks",
+      team: "5 people",
+    },
+    challenge: [
+      "Smart Ed was outgrowing its single-product identity. With I Can Read as its flagship and more global education partnerships ahead, it needed to become a trusted parent brand — not just one programme's name.",
+      "In a market crowded with coaching centres and tuition providers, the brand had to feel premium and globally credible to aspirational parents, while staying warm and child-centred for young learners. The job was a full identity that could hold both.",
+    ],
+    strategy: [
+      {
+        heading: "A parent brand built to scale",
+        text: "We defined a brand architecture where Smart Ed sits above its programmes — so I Can Read and future global partners each get room to breathe under one trusted name.",
+      },
+      {
+        heading: "Premium, but never cold",
+        text: "Positioning anchored on confidence, global standards, and growth beyond grades — aspirational for parents without the pressure, warm for children without being childish.",
+      },
+      {
+        heading: "A personality kids remember",
+        text: "Four mascots — Boomba, Kiki, Zee and JeJe — embody Compassion, Creativity, Confidence and Connection, turning brand values into characters children actually bond with.",
+      },
+    ],
+    execution: [
+      {
+        heading: "Identity & logo system",
+        text: "A full logo suite — primary, horizontal, vertical, badge and monochrome lockups — on a vivid palette of ultramarine, magenta, golden yellow and mint, set in Cal Sans and Poppins.",
+      },
+      {
+        heading: "The mascot family",
+        text: "Boomba, Kiki, Zee and JeJe — a cast of education spirit guides with their own personalities, usable as characters, patterns, and playful brand devices across every touchpoint.",
+      },
+      {
+        heading: "Messaging system",
+        text: "A complete verbal identity: core message, parent / student / partner messaging tracks, key pillars, and a tone-of-voice guide — all under one line, 'Learn. Lead. Shine.'",
+      },
+      {
+        heading: "Brand guidelines & launch collateral",
+        text: "A practical brand manual plus launch-ready social templates, parent materials, and stationery, so the team could roll the new brand out consistently from day one.",
+      },
+    ],
+    gallery: [
+      {
+        heading: "The brand in use",
+        layout: "grid-2",
+        items: [
+          {
+            kind: "image",
+            src: `/smarted/applications/social-grid.jpg`,
+            title: "Social system",
+            aspect: "16/9",
+          },
+          {
+            kind: "image",
+            src: `/smarted/applications/posters.jpg`,
+            title: "Campaign posters",
+            aspect: "16/9",
+          },
+          {
+            kind: "image",
+            src: `/smarted/applications/editorial.jpg`,
+            title: "Editorial layouts",
+            aspect: "16/9",
+          },
+          {
+            kind: "image",
+            src: `/smarted/applications/stationery.jpg`,
+            title: "Stationery & collateral",
+            aspect: "16/9",
+          },
+          {
+            kind: "image",
+            src: `/smarted/applications/mobile.jpg`,
+            title: "Mobile & social",
+            aspect: "16/9",
+          },
+          {
+            kind: "image",
+            src: `/smarted/applications/web.jpg`,
+            title: "Web direction",
+            aspect: "16/9",
+          },
+        ],
+      },
+      {
+        heading: "Meet the mascots — Boomba, Kiki, Zee & JeJe",
+        layout: "grid-3",
+        items: [
+          { kind: "image", src: `/smarted/mascots/mascot-01.png`, aspect: "1/1" },
+          { kind: "image", src: `/smarted/mascots/mascot-03.png`, aspect: "1/1" },
+          { kind: "image", src: `/smarted/mascots/mascot-05.png`, aspect: "1/1" },
+          { kind: "image", src: `/smarted/mascots/mascot-07.png`, aspect: "1/1" },
+          { kind: "image", src: `/smarted/mascots/mascot-08.png`, aspect: "1/1" },
+          { kind: "image", src: `/smarted/mascots/mascot-10.png`, aspect: "1/1" },
+        ],
+      },
+    ],
+    results: {
+      metrics: [
+        { label: "Brand", value: "Unified" },
+        { label: "Architecture", value: "Parent + product" },
+        { label: "Mascots", value: "4 characters" },
+        { label: "Identity", value: "Full system" },
+        { label: "Voice", value: "Learn. Lead. Shine." },
+      ],
+      narrative:
+        "Smart Ed now has a premium, ownable identity — a parent brand ready to carry I Can Read and the global programmes that follow, trusted by parents and adored by kids.",
+    },
+    testimonial: {
+      quote:
+        "The Wider Collective gave us more than a logo — they gave us a brand parents trust and children adore. Smart Ed finally looks like the premium platform we always knew it could be.",
+      author: "Founder",
+      role: "Smart Ed Bangladesh",
+    },
+    nextSteps: [
+      "Roll the identity across the Smart Ed website and parent-facing platform.",
+      "Extend the mascot system into learning content and in-centre experiences.",
+      "Co-branded identity kits for each new global education partner.",
+    ],
+  },
+
   globalmission: {
     slug: "globalmission",
     client: "Global Mission Impact Institute",
@@ -314,7 +660,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     heroMedia: {
       kind: "video",
       src: `${CDN}/GMI/GMI_video.mp4`,
-      poster: `${CDN}/GMI/thumbnail.png`,
+      poster: `/covers/gmi.jpg`,
     },
     kpis: [
       { label: "Brand guideline v1", value: "100 pages" },
@@ -425,7 +771,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     heroMedia: {
       kind: "video",
       src: `${CDN}/Yoyoso/yoyoso_cgi.mp4`,
-      poster: `${CDN}/Yoyoso/cgi_thumbnail.png`,
+      poster: `/covers/yoyoso.jpg`,
     },
     kpis: [
       { label: "Influencer reach", value: "2.5M+" },

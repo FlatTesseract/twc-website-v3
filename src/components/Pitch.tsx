@@ -72,7 +72,7 @@ export function Pitch() {
             loop
             playsInline
             preload="metadata"
-            poster="/work/deathcorp-poster.jpg"
+            poster="/deathcorp/poster.jpg"
           >
             <source src="https://video.thewidercollective.com/Death%20Corp/NFT%20announcement.MOV" type="video/quicktime" />
             <source src="https://video.thewidercollective.com/Death%20Corp/NFT%20announcement.MOV" type="video/mp4" />

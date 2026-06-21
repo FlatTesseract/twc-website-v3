@@ -894,6 +894,98 @@ export const caseStudies: Record<string, CaseStudy> = {
       "Rollout of the retail aesthetic guide to new stores.",
     ],
   },
+
+  deathcorp: {
+    slug: "deathcorp",
+    client: "Death Corp Piggies",
+    industry: "Web3 / NFT",
+    title: "Half a million dollars in 90 days.",
+    summary:
+      "A napkin sketch turned into a full web3 IP — story, lore, art direction, 3,333 NFTs, brand identity, a mint site, and a community grown from zero — that raised half a million dollars in 90 days.",
+    heroMedia: {
+      kind: "video",
+      src: `${CDN}/Death%20Corp/NFT%20announcement.MOV`,
+      poster: `/deathcorp/poster.jpg`,
+    },
+    kpis: [
+      { label: "NFTs", value: "3,333" },
+      { label: "Raised", value: "$500K" },
+      { label: "Timeline", value: "90 days" },
+      { label: "Secondary volume", value: "$400K+" },
+    ],
+    snapshot: {
+      industry: "Web3 / NFT · Apocalyptic pig IP",
+      region: "Global",
+      services: [
+        "IP & worldbuilding",
+        "Art direction",
+        "Brand identity",
+        "NFT collection",
+        "Mint site / web dev",
+        "Community & social",
+        "Video production",
+      ],
+      timeline: "90 days",
+      team: "8 people",
+    },
+    challenge: [
+      "Death Corp came to us with a napkin sketch and a name — an apocalyptic pig IP with no story, no art, and no audience.",
+      "To launch in web3 it needed everything at once: a universe people believed in, art worth collecting, the tech to mint it, and a community big enough to sell through — all built from zero, and fast.",
+    ],
+    strategy: [
+      {
+        heading: "Build a universe, not a collection",
+        text: "Before a single pig was drawn we wrote the world — the lore, the factions, the apocalypse — so every NFT meant something and the community had a story worth belonging to.",
+      },
+      {
+        heading: "Art direction with a point of view",
+        text: "A distinct, unapologetic visual language for the piggies — grimy, funny, and collectible — built to stand out in a sea of generic PFP projects.",
+      },
+      {
+        heading: "Engineer the hype loop",
+        text: "Trailers, teasers, and a daily content cadence on X and Discord turned strangers into a community, and the community into mint-day demand.",
+      },
+    ],
+    execution: [
+      {
+        heading: "Story & lore",
+        text: "A full narrative bible — the world, the characters, the conflict — giving the IP depth far beyond a profile picture.",
+      },
+      {
+        heading: "3,333 NFTs",
+        text: "A complete generative collection — traits, rarity, and art direction — produced and prepped for a clean mint.",
+      },
+      {
+        heading: "Brand & mint site",
+        text: "A full identity system plus a custom mint website with smart-contract integration, built to hold up under launch-day traffic.",
+      },
+      {
+        heading: "Trailers & community",
+        text: "Cinematic trailers and a zero-to-thousands community engine across X and Discord, all building toward the announcement.",
+      },
+    ],
+    results: {
+      metrics: [
+        { label: "Primary mint", value: "$100K" },
+        { label: "Secondary volume", value: "$400K+" },
+        { label: "Total · 90 days", value: "$500K" },
+        { label: "NFTs", value: "3,333" },
+      ],
+      narrative:
+        "From a napkin sketch to a half-million-dollar IP in three months — a fully realized world, a sold-through collection, and a community that still carries the brand.",
+    },
+    testimonial: {
+      quote:
+        "We handed them a sketch and a name. They handed back a universe — and half a million dollars in 90 days.",
+      author: "Founder",
+      role: "Death Corp Piggies",
+    },
+    nextSteps: [
+      "Season 2 art drop and lore expansion.",
+      "Holder-only merch and IRL activations.",
+      "Cross-chain expansion and new community quests.",
+    ],
+  },
 };
 
 export const caseStudySlugs = Object.keys(caseStudies);

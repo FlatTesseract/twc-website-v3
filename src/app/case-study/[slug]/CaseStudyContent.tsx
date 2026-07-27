@@ -5,6 +5,7 @@ import Link from "next/link";
 import { use } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LazyVideo } from "@/components/LazyVideo";
 import {
   caseStudies,
   type HeroMedia,
@@ -30,7 +31,7 @@ function HeroMediaBlock({ media, alt }: { media: HeroMedia; alt: string }) {
   if (media.kind === "video") {
     return (
       <div className="relative aspect-video rounded-2xl overflow-hidden border border-border bg-black">
-        <video
+        <LazyVideo
           autoPlay
           loop
           muted
@@ -40,7 +41,7 @@ function HeroMediaBlock({ media, alt }: { media: HeroMedia; alt: string }) {
           className="w-full h-full object-cover"
         >
           <source src={media.src} type="video/mp4" />
-        </video>
+        </LazyVideo>
       </div>
     );
   }

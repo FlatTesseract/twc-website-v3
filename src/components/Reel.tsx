@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { LazyVideo } from "./LazyVideo";
 
 export function Reel() {
   return (
@@ -27,7 +28,7 @@ export function Reel() {
           viewport={{ once: true }}
           className="relative aspect-video rounded-2xl overflow-hidden bg-muted group"
         >
-          <video
+          <LazyVideo
             className="w-full h-full object-cover"
             autoPlay
             muted
@@ -37,7 +38,7 @@ export function Reel() {
             preload="metadata"
           >
             <source src="https://video.thewidercollective.com/TWC/showreel" type="video/mp4" />
-          </video>
+          </LazyVideo>
 
           {/* Border glow on hover */}
           <div className="absolute inset-0 border-2 border-transparent group-hover:border-accent/50 rounded-2xl transition-all duration-500 pointer-events-none" />

@@ -19,15 +19,18 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
 
     lenisRef.current = lenis;
 
-    function raf(time: number) {
+    // Perf/leak fix: keep the rAF id so the loop is cancelled on unmount.
+    // Previously the loop kept running (and stacked up a new loop on every
+    // client-side navigation back to this page).
+    let rafId = requestAnimationFrame(function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
+    });
 
     return () => {
+      cancelAnimationFrame(rafId);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
 

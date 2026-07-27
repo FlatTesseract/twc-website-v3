@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
+import { LazyVideo } from "./LazyVideo";
 
 const stats = [
   { value: 3333, label: "NFTs", suffix: "" },
@@ -64,7 +65,7 @@ export function Pitch() {
           viewport={{ once: true }}
           className="relative aspect-video rounded-2xl overflow-hidden mb-16 bg-muted"
         >
-          <video
+          <LazyVideo
             className="w-full h-full object-cover"
             autoPlay
             muted
@@ -76,7 +77,7 @@ export function Pitch() {
           >
             <source src="https://video.thewidercollective.com/Death%20Corp/NFT%20announcement.MOV" type="video/quicktime" />
             <source src="https://video.thewidercollective.com/Death%20Corp/NFT%20announcement.MOV" type="video/mp4" />
-          </video>
+          </LazyVideo>
         </motion.div>
 
         {/* Content */}

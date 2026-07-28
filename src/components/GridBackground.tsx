@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 function seeded(i: number, salt: number) {
   const x = Math.sin(i * 127.1 + salt * 311.7) * 43758.5453123;
@@ -10,7 +10,9 @@ function seeded(i: number, salt: number) {
 
 export function GridBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const mouseRef = useRef({ x: 0, y: 0 });
+  // Perf: track visibility so the floating dots and the mousemove-driven
+  // gradient repaints stop entirely once the hero is scrolled out of view.
+  const inView = useInView(containerRef);
 
   const dots = useMemo(() => {
     return Array.from({ length: 20 }, (_, i) => {
@@ -34,26 +36,37 @@ export function GridBackground() {
   }, []);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        mouseRef.current = {
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top,
-        };
-        
-        // Update CSS custom properties for the radial gradient
-        containerRef.current.style.setProperty('--mouse-x', `${mouseRef.current.x}px`);
-        containerRef.current.style.setProperty('--mouse-y', `${mouseRef.current.y}px`);
-      }
+    if (!inView) return;
+
+    // Perf: throttle to one style write per animation frame instead of one
+    // per mousemove event (which can fire far more often than 60/s).
+    let rafId = 0;
+    const last = { x: 0, y: 0 };
+
+    const apply = () => {
+      rafId = 0;
+      const el = containerRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      el.style.setProperty("--mouse-x", `${last.x - rect.left}px`);
+      el.style.setProperty("--mouse-y", `${last.y - rect.top}px`);
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+    const handleMouseMove = (e: MouseEvent) => {
+      last.x = e.clientX;
+      last.y = e.clientY;
+      if (!rafId) rafId = requestAnimationFrame(apply);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, [inView]);
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className="absolute inset-0 overflow-hidden"
       style={{
@@ -62,7 +75,7 @@ export function GridBackground() {
       } as React.CSSProperties}
     >
       {/* Base grid pattern */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.15]"
         style={{
           backgroundImage: `
@@ -74,35 +87,36 @@ export function GridBackground() {
       />
 
       {/* Radial glow following mouse */}
-      <div 
+      <div
         className="absolute inset-0 transition-opacity duration-300"
         style={{
           background: `radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(155, 140, 255, 0.15), transparent 40%)`,
         }}
       />
 
-      {/* Animated floating dots */}
+      {/* Animated floating dots — only animated while the hero is on screen */}
       <div className="absolute inset-0">
-        {dots.map((dot) => (
-          <motion.div
-            key={dot.id}
-            className="absolute w-1 h-1 rounded-full bg-accent/30"
-            initial={{
-              x: dot.initialX,
-              y: dot.initialY,
-            }}
-            animate={{
-              x: dot.animateX,
-              y: dot.animateY,
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{
-              duration: dot.duration,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-        ))}
+        {inView &&
+          dots.map((dot) => (
+            <motion.div
+              key={dot.id}
+              className="absolute w-1 h-1 rounded-full bg-accent/30"
+              initial={{
+                x: dot.initialX,
+                y: dot.initialY,
+              }}
+              animate={{
+                x: dot.animateX,
+                y: dot.animateY,
+                opacity: [0.2, 0.5, 0.2],
+              }}
+              transition={{
+                duration: dot.duration,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
+          ))}
       </div>
 
       {/* Corner accents */}

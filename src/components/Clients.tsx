@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 // Client logos - matching the provided image grid
 // Row 1: Ittefaq, Bengal Meat Deli, AirAsia, Mana Bay, Adeen & Co
@@ -31,26 +32,25 @@ const clients = [
 function LogoMarquee({
   items,
   direction = "left",
+  paused = false,
 }: {
   items: typeof clients;
   direction?: "left" | "right";
+  paused?: boolean;
 }) {
   const duplicatedItems = [...items, ...items];
 
   return (
     <div className="overflow-hidden">
-      <motion.div
-        className="flex gap-12 py-4"
-        animate={{
-          x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"],
-        }}
-        transition={{
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 30,
-            ease: "linear",
-          },
+      {/* Perf: CSS keyframe animation runs on the compositor (no per-frame JS)
+          and is paused entirely while the section is off-screen. */}
+      <div
+        className="flex gap-12 py-4 w-max will-change-transform"
+        style={{
+          animation: `${
+            direction === "left" ? "marquee-left" : "marquee-right"
+          } 30s linear infinite`,
+          animationPlayState: paused ? "paused" : "running",
         }}
       >
         {duplicatedItems.map((client, i) => {
@@ -75,14 +75,17 @@ function LogoMarquee({
             </div>
           );
         })}
-      </motion.div>
+      </div>
     </div>
   );
 }
 
 export function Clients() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const inView = useInView(sectionRef, { margin: "200px 0px" });
+
   return (
-    <section className="py-32 bg-muted/30">
+    <section ref={sectionRef} className="py-32 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 mb-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -96,8 +99,12 @@ export function Clients() {
 
       {/* Logo marquees */}
       <div className="space-y-4 mb-12">
-        <LogoMarquee items={clients} direction="left" />
-        <LogoMarquee items={clients.slice().reverse()} direction="right" />
+        <LogoMarquee items={clients} direction="left" paused={!inView} />
+        <LogoMarquee
+          items={clients.slice().reverse()}
+          direction="right"
+          paused={!inView}
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 text-center">

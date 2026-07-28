@@ -164,13 +164,14 @@ vec3 getColor(vec2 p){
  }
 
  float middle = digit(p);
- 
+
+ // Perf: 5-tap cross glow instead of the original 9-tap box (halves per-pixel
+ // shader cost; 0.18 weight keeps overall glow brightness equivalent).
  const float off = 0.002;
- float sum = digit(p + vec2(-off, -off)) + digit(p + vec2(0.0, -off)) + digit(p + vec2(off, -off)) +
- digit(p + vec2(-off, 0.0)) + digit(p + vec2(0.0, 0.0)) + digit(p + vec2(off, 0.0)) +
- digit(p + vec2(-off, off)) + digit(p + vec2(0.0, off)) + digit(p + vec2(off, off));
- 
- vec3 baseColor = vec3(0.9) * middle + sum * 0.1 * vec3(1.0) * bar;
+ float sum = middle + digit(p + vec2(0.0, -off)) + digit(p + vec2(-off, 0.0)) +
+ digit(p + vec2(off, 0.0)) + digit(p + vec2(0.0, off));
+
+ vec3 baseColor = vec3(0.9) * middle + sum * 0.18 * vec3(1.0) * bar;
  return baseColor;
 }
 
@@ -273,10 +274,9 @@ export default function FaultyTerminal({
 
   const tintVec = useMemo(() => hexToRgb(tint), [tint]);
   const ditherValue = useMemo(() => (typeof dither === "boolean" ? (dither ? 1 : 0) : dither), [dither]);
-  const resolvedDpr = useMemo(
-    () => dpr ?? (typeof window !== "undefined" ? Math.min(window.devicePixelRatio || 1, 2) : 1),
-    [dpr]
-  );
+  // Perf: cap DPR at 1 — the effect sits behind a dark overlay, so the extra
+  // resolution is invisible but costs 2-4x more fragment shader work.
+  const resolvedDpr = useMemo(() => dpr ?? 1, [dpr]);
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     const ctn = containerRef.current;
@@ -335,6 +335,8 @@ export default function FaultyTerminal({
     resizeObserver.observe(ctn);
     resize();
 
+    let running = false;
+
     const update = (t: number) => {
       rafRef.current = requestAnimationFrame(update);
 
@@ -370,12 +372,35 @@ export default function FaultyTerminal({
       renderer.render({ scene: mesh });
     };
 
-    rafRef.current = requestAnimationFrame(update);
+    const start = () => {
+      if (running) return;
+      running = true;
+      rafRef.current = requestAnimationFrame(update);
+    };
+    const stop = () => {
+      if (!running) return;
+      running = false;
+      cancelAnimationFrame(rafRef.current);
+    };
+
+    // Perf: only render while the effect is actually on screen. Without this,
+    // the WebGL loop runs full-screen shader work on every frame for the whole
+    // lifetime of the page, dragging scroll performance everywhere.
+    const intersectionObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) start();
+        else stop();
+      },
+      { rootMargin: "100px" }
+    );
+    intersectionObserver.observe(ctn);
+
     ctn.appendChild(gl.canvas);
     if (mouseReact) ctn.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      cancelAnimationFrame(rafRef.current);
+      stop();
+      intersectionObserver.disconnect();
       resizeObserver.disconnect();
       if (mouseReact) ctn.removeEventListener("mousemove", handleMouseMove);
       if (gl.canvas.parentElement === ctn) ctn.removeChild(gl.canvas);

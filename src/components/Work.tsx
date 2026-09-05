@@ -222,7 +222,7 @@ export function Work() {
           doesn&apos;t suck.&quot;
         </p>
         <Link
-          href="https://0xlegacylink.my.canva.site/twc-selected-works-2025"
+          href="https://canva.link/ogxi1295odzelty"
           target="_blank"
           className="inline-flex items-center gap-2 text-accent hover:underline"
         >

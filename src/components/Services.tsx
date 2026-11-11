@@ -1,11 +1,14 @@
 "use client";
 
+import Link from "next/link";
+
 import { motion } from "framer-motion";
 
 const services = [
   {
     number: "01",
     title: "FILM & CONTENT",
+    slug: "film-production",
     description: `Brand films. Ads. Social. The whole production.
 We've shot airlines, water parks, hospitals,
 and a blockchain thing about pigs at the end of the world.`,
@@ -13,6 +16,7 @@ and a blockchain thing about pigs at the end of the world.`,
   {
     number: "02",
     title: "BRAND & IDENTITY",
+    slug: "brand-identity",
     description: `Logos? Easy. Systems that last? Harder.
 We build identities that still work in 10 years.
 Not decks that sit in Google Drive forever.
@@ -21,6 +25,7 @@ Actual guidelines. Ones your team opens.`,
   {
     number: "03",
     title: "SYSTEMS & SOFTWARE",
+    slug: "websites-software",
     description: `The boring stuff that makes everything else work.
 Custom tools. Automation. Mobile and Web Applications.
 Clean ops = sharper marketing. Simple.`,
@@ -72,6 +77,7 @@ export function Services() {
                   <p className="text-lg text-muted-foreground whitespace-pre-line leading-relaxed">
                     {service.description}
                   </p>
+                  <Link href={`/services/${service.slug}/`} className="inline-block mt-6 text-accent underline">Explore {service.title.toLowerCase()} →</Link>
                 </div>
               </div>
 

@@ -1,3 +1,4 @@
+import { siteUrl } from "@/lib/site";
 import { CaseStudyContent } from "./CaseStudyContent";
 import { caseStudies, caseStudySlugs } from "@/lib/case-studies";
 
@@ -16,6 +17,7 @@ export async function generateMetadata({
   return {
     title: `${study.client} — ${study.title} | The Wider Collective`,
     description: study.summary,
+    alternates: { canonical: siteUrl(`/case-study/${slug}/`) },
   };
 }
 

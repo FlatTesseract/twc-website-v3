@@ -1,7 +1,10 @@
 import { Navbar, Footer } from "@/components";
 import Link from "next/link";
+import type { Metadata } from "next";
+export const metadata: Metadata = { title: "Press & Media | The Wider Collective", description: "Reporting and interviews about The Wider Collective, including the team behind Marvella.", alternates: { canonical: "https://www.thewidercollective.com/press/" } };
 
 const pressItems = [
+  { publication: "The Business Standard", title: "Meet the team behind Marvella, Bangladesh’s first AI influencer", description: "An interview with the TWC team about developing Marvella with The Marvel – Be You.", date: "November 16, 2023", url: "https://www.tbsnews.net/splash/meet-team-behind-marvella-bangladeshs-first-ai-influencer-740514" },
   {
     publication: "The Daily Star",
     title: "Let's Vibe with Marvel of Tomorrow Season 3 held in Dhaka",
